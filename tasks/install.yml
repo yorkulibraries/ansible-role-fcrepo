@@ -42,15 +42,15 @@
 - name: Install python dependencies
   apt:
     pkg:
-      - python-psycopg2
-      - python-mysqldb
-      - mysql-client 
+      - python3-psycopg2
+      - python3-mysqldb
+      - mysql-client
     state: present
     update_cache: yes
     cache_valid_time: 3600
   when: ansible_os_family == "Debian"
 
-- name: Install python dependencies 
+- name: Install python dependencies
   yum:
     name:
       - python-psycopg2
