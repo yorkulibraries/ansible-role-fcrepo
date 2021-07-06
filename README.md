@@ -13,17 +13,12 @@ Available variables are listed below, along with default values:
 
 Version of Fedora to install
 ```
-fcrepo_version: 5.1.0
+fcrepo_version: 6.0.0
 ```
 
 User with permissions to install:
 ```
 fcrepo_user: {{ tomcat8_server_user }}
-```
-
-Path to put Fedora data directory (see the notes section below)
-```
-fcrepo_data_dir: /var/lib/tomcat8/fcrepo4-data
 ```
 
 A home directory for Fedora
@@ -39,31 +34,6 @@ fcrepo_war_path: "{{ tomcat8_home }}/webapps/fcrepo.war"
 The activemq configuration file template name
 ```
 fcrepo_activemq_template: activemq.xml.j2
-```
-
-Where the configurations are stored
-```
-fcrepo_config_dir: "{{ fcrepo_home_dir }}/configs"
-```
-
-Path to put Fedora data directory
-```
-fcrepo_data_dir: "{{ fcrepo_home_dir }}/fcrepo4-data"
-```
-
-Path to put the Fedora data binaries directory
-```
-fcrepo_binary_directory: "{{ fcrepo_data_dir}}/binaries"
-```
-
-Which Fedora object persistence configuration to use
-```
-fcrepo_persistence: file-simple
-```
-
-If 'file-simple persistence' is used (default), where to keep the modeshape repository file
-```
-fcrepo_object_directory: "{{ fcrepo_data_dir}}/objects"
 ```
 
 If either 'jdbc-mysql' or 'jdbc-postgres' are used for object persistence, the database settings
@@ -86,7 +56,7 @@ Islandora takes advantage of fcrepo's external content feature.  To enable redir
 
 Where the config file gets stored:
 ```
-fcrepo_allowed_external_content_file: "{{ fcrepo_config_dir }}/allowed-external-content.txt"
+fcrepo_allowed_external_content_file: "{{ fcrepo_home_dir }}/allowed-external-content.txt"
 ```
 
 What paths/urls to expose:

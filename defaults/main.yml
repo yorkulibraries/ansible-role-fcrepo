@@ -1,18 +1,9 @@
-fcrepo_version: 5.1.0
+fcrepo_version: 6.0.0
 fcrepo_user: "{{ tomcat8_server_user }}"
-fcrepo_data_dir: /omega/fcrepo4-data
-fcrepo_binary_directory: "{{ fcrepo_data_dir}}/binaries"
 fcrepo_war_path: "{{ tomcat8_home }}/webapps/fcrepo.war"
 fcrepo_home_dir: /opt/fcrepo
 fcrepo_activemq_template: activemq.xml.j2
 fcrepo_activemq_broker_url: "tcp://localhost:61616"
-fcrepo_config_dir: "{{ fcrepo_home_dir }}/configs"
-
-# For file-simple object persistence.
-fcrepo_object_directory: "{{ fcrepo_data_dir}}/objects"
-
-# For production use either "jdbc-mysql" or "jdbc-postgresql"
-fcrepo_persistence: file-simple
 
 # Used for mysql or postgres object persistence. Please change the password locally!
 fcrepo_db_name: fcrepo
@@ -29,6 +20,6 @@ fcrepo_db_root_password: "islandora"
 fcrepo_allowed_external_content:
   - http://localhost:8000/
 
-fcrepo_allowed_external_content_file: "{{ fcrepo_config_dir }}/allowed-external-content.txt"
+fcrepo_allowed_external_content_file: "{{ fcrepo_home_dir }}/configs/allowed-external-content.txt"
 
 fcrepo_auth_header_name:
